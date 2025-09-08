@@ -1,0 +1,84 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Press Start 2P', monospace;
+  background: #111;
+}
+
+#gameCanvas {
+  display: block;
+  background: linear-gradient(to top, #111 0%, #444 80%);
+}
+
+/* Overlay 404 page */
+.overlay {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  color: white;
+  text-shadow: 0 0 15px black;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.overlay h1 {
+  font-size: 6rem;
+  margin-bottom: 20px;
+  animation: bounce 1.5s infinite;
+  color: #ff5555;
+  text-shadow: 0 0 20px #ff4444;
+}
+
+.overlay p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.overlay button {
+  padding: 14px 28px;
+  background: linear-gradient(45deg,#ff4444,#ff8800);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.overlay button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px #ff8800;
+}
+
+.overlay .tip {
+  margin-top: 15px;
+  font-size: 1rem;
+  color: #ffcc00;
+  animation: fadeIn 2s infinite alternate;
+}
+
+#scoreDisplay, #levelDisplay {
+  position: absolute;
+  top: 10px;
+  color: white;
+  font-family: monospace;
+  font-size: 1.2rem;
+  z-index: 10;
+}
+
+#scoreDisplay { left: 10px; }
+#levelDisplay { right: 10px; }
+
+/* Animations */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
